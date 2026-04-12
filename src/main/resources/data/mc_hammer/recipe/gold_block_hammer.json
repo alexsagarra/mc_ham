@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "B",
+    "S",
+    "S"
+  ],
+  "key": {
+    "B": "minecraft:gold_block",
+    "S": "minecraft:stick"
+  },
+  "result": {
+    "count": 1,
+    "id": "mc_hammer:gold_block_hammer"
+  }
+}

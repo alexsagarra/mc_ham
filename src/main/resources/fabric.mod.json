@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "mc_hammer",
+	"version": "${version}",
+	"name": "MC Hammer",
+	"description": "Ein Lernmod mit einem extrem starken Hammer-Werkzeug.",
+	"authors": [
+		"Alex"
+	],
+	"contact": {
+		"homepage": "https://github.com",
+		"sources": "https://github.com"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/mc_hammer/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"de.mchammer.McHammerMod"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.18.6",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

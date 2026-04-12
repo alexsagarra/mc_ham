@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "mc_hammer:item/iron_block_hammer"
+  }
+}

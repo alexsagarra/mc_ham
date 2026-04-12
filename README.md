@@ -1,4 +1,4 @@
-# MC Hammer Mod (Minecraft Fabric 1.21.1)
+# MC Hammer Mod (Minecraft Fabric 1.21.11)
 
 Lernprojekt fuer den Einstieg ins Minecraft Modding.
 
@@ -85,6 +85,30 @@ Optionaler Dev-Server:
 2. In den Minecraft `mods`-Ordner (passende Version/Loader) kopieren.
 3. Spiel starten und Mod laden.
 
+### Deploy per Skript (Windows, empfohlen)
+
+Skriptpfad:
+
+- `scripts/publish-to-minecraft.ps1`
+
+Nur kopieren (wenn bereits gebaut):
+
+```powershell
+./scripts/publish-to-minecraft.ps1
+```
+
+Build + kopieren in einem Schritt:
+
+```powershell
+./scripts/publish-to-minecraft.ps1 -BuildFirst
+```
+
+Eigenen Minecraft-Ordner angeben (z. B. anderer Launcher):
+
+```powershell
+./scripts/publish-to-minecraft.ps1 -BuildFirst -MinecraftDir "D:\Games\Minecraft\.minecraft"
+```
+
 ### Plattformen (optional spaeter)
 
 - Modrinth
@@ -112,7 +136,7 @@ Mit diesem Projekt lernst du die wichtigsten Modding-Bausteine:
 
 ## Nächste konkrete Umsetzungsschritte
 
-1. Fabric-Template fuer 1.21.1 initialisieren.
+1. Fabric-Template fuer 1.21.11 initialisieren.
 2. Grundstruktur aus PLAN.md anlegen.
 3. Ersten Hammer (Eisenblock-Hammer) implementieren.
 4. Build und Ingame-Test ausfuehren.
