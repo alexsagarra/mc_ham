@@ -55,6 +55,24 @@ footer {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-logo {
+  width: min(300px, 100%);
+  height: auto;
+  filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.35));
+}
+
 .eyebrow {
   margin: 0;
   color: var(--accent);
@@ -158,6 +176,118 @@ pre {
   overflow-x: auto;
 }
 
+.version-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.version-pill {
+  display: inline-block;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  background: rgba(52, 211, 153, 0.14);
+  color: #c7f9e5;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.version-meta {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.changelog-list {
+  margin-top: 0.8rem;
+}
+
+.changelog-note {
+  margin: 0.8rem 0 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+}
+
+.roadmap-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.roadmap-item {
+  border: 1px solid var(--line);
+  background: rgba(11, 20, 29, 0.65);
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.roadmap-item h3 {
+  margin: 0.3rem 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.roadmap-phase {
+  margin: 0;
+  display: inline-block;
+  padding: 0.24rem 0.5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 158, 11, 0.45);
+  background: rgba(245, 158, 11, 0.15);
+  color: #ffdca6;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.faq-list {
+  margin-top: 0.8rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(11, 20, 29, 0.65);
+  padding: 0.65rem 0.8rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq-item p {
+  margin: 0.55rem 0 0;
+  color: var(--muted);
+}
+
+.media-grid {
+  margin-top: 0.8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.media-img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0b141d;
+  object-fit: cover;
+}
+
+.media-video {
+  margin-top: 0.9rem;
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: #0b141d;
+}
+
 footer {
   margin-top: 1.2rem;
   color: var(--muted);
@@ -165,7 +295,27 @@ footer {
 }
 
 @media (max-width: 760px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-art {
+    order: -1;
+  }
+
+  .hero-logo {
+    width: min(220px, 70vw);
+  }
+
   .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roadmap-grid {
     grid-template-columns: 1fr;
   }
 

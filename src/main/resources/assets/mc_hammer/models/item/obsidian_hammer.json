@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/handheld",
   "textures": {
-    "layer0": "mc_hammer:item/obsidian_hammer"
+    "layer0": "mc_hammer:item/obsidian_block_hammer"
   }
 }

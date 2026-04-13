@@ -12,15 +12,20 @@
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
-  <header class="hero">
-    <p class="eyebrow">Fabric 1.21.11 Mod</p>
-    <h1>MC Ham</h1>
-    <p class="subtitle">Das Ultimate-Werkzeug fuer Mining und Kampf. Vom Kupferhammer bis zum Obsidian-Blitzhammer.</p>
-    <div class="cta-row">
-      <a id="downloadLatest" class="btn btn-primary" href="#" rel="noopener">Neueste Version herunterladen</a>
-      <a id="releasesPage" class="btn btn-ghost" href="#" rel="noopener">Alle Releases</a>
+  <header class="hero hero-grid">
+    <div>
+      <p class="eyebrow">Fabric 1.21.11 Mod</p>
+      <h1>MC Ham</h1>
+      <p class="subtitle">Das Ultimate-Werkzeug fuer Mining und Kampf. Vom Kupferhammer bis zum Obsidian-Blitzhammer.</p>
+      <div class="cta-row">
+        <a id="downloadLatest" class="btn btn-primary" href="#" rel="noopener">Zur Release-Seite (Download)</a>
+        <a id="releasesPage" class="btn btn-ghost" href="#" rel="noopener">Alle Releases</a>
+      </div>
+      <p id="repoLabel" class="repo-label"></p>
     </div>
-    <p id="repoLabel" class="repo-label"></p>
+    <div class="hero-art">
+      <img src="./logo.png" alt="MC Ham Mod Logo" class="hero-logo" />
+    </div>
   </header>
 
   <main>
@@ -59,6 +64,89 @@
       <h2>Schnellstart fuer Spieler</h2>
       <p>Nach dem Download die Datei <strong>mc_hammer-*.jar</strong> in den mods-Ordner legen:</p>
       <pre><code>%APPDATA%/.minecraft/mods</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Version und Changelog</h2>
+      <div class="version-row">
+        <span class="version-pill">Aktuell: v0.1.0</span>
+        <span class="version-meta">Minecraft 1.21.11 · Fabric</span>
+      </div>
+      <ul class="changelog-list">
+        <li>Neue Gold- und Obsidian-Hammer hinzugefuegt</li>
+        <li>Obsidian-Hammer mit Blitz-Effekt und Flaechenzerstoerung</li>
+        <li>Item-Modelle und Texturen auf 1.21.11-Format angepasst</li>
+        <li>Website mit Logo, Screenshots und Video erweitert</li>
+      </ul>
+      <p class="changelog-note">Details und Assets findest du auf der Release-Seite.</p>
+    </section>
+
+    <section class="card">
+      <h2>Roadmap</h2>
+      <div class="roadmap-grid">
+        <article class="roadmap-item">
+          <p class="roadmap-phase">v0.2.0</p>
+          <h3>Balancing und QoL</h3>
+          <ul>
+            <li>Feinabstimmung von Schaden, Haltbarkeit und Mining-Speed</li>
+            <li>Optionale Cooldowns fuer Blitz- und AOE-Effekte</li>
+            <li>Bessere Ingame-Beschreibungen fuer alle Hammer</li>
+          </ul>
+        </article>
+        <article class="roadmap-item">
+          <p class="roadmap-phase">v0.3.0</p>
+          <h3>Server-Fokus</h3>
+          <ul>
+            <li>Konfigurierbare Werte fuer Multiplayer-Server</li>
+            <li>Schutzmechanismen gegen uebermaessige Blockzerstoerung</li>
+            <li>Vorbereitung fuer Modrinth/CurseForge-Distribution</li>
+          </ul>
+        </article>
+        <article class="roadmap-item">
+          <p class="roadmap-phase">v1.0.0</p>
+          <h3>Stable Release</h3>
+          <ul>
+            <li>Finalisierte Features und dokumentierte API-Abhaengigkeiten</li>
+            <li>Kompletter Changelog und Release Notes pro Version</li>
+            <li>Langfristiger Support fuer ausgewaehlte Minecraft-Versionen</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>FAQ</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Welche Versionen brauche ich fuer den Mod?</summary>
+          <p>Du brauchst Minecraft 1.21.11 mit Fabric Loader. Auf Client und Server muessen Version und Mod-Stand identisch sein.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Brauche ich Fabric API?</summary>
+          <p>Ja, empfohlen. Installiere auf Client und Server dieselbe Fabric API-Version, damit es keine Join-Fehler gibt.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Wie fuege ich den Mod auf Aternos hinzu?</summary>
+          <p>Server stoppen, Software auf Fabric stellen, danach im Mods-Bereich den Mod und Fabric API installieren und neu starten.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Warum funktioniert der direkte Download manchmal nicht?</summary>
+          <p>Ein direkter JAR-Link klappt erst, wenn ein GitHub Release mit JAR-Asset vorhanden ist. Nutze bis dahin die Release-Seite.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Showcase</h2>
+      <p>Gameplay und Ingame-Eindruecke:</p>
+      <div class="media-grid">
+        <img src="./MC_Hammer_Mod_1.png" alt="MC Ham Screenshot 1" class="media-img" />
+        <img src="./MC_Hammer_Mod_2.png" alt="MC Ham Screenshot 2" class="media-img" />
+      </div>
+      <video class="media-video" controls preload="metadata">
+        <source src="./MC_Hammer_Mod.mp4" type="video/mp4" />
+        Dein Browser unterstuetzt dieses Video nicht.
+      </video>
     </section>
   </main>
 

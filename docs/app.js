@@ -2,19 +2,18 @@
   var owner = "alexsagarra";
   var repo = "mc_ham";
 
-  var latestRelease = "https://github.com/" + owner + "/" + repo + "/releases/latest";
-  var directJar = "https://github.com/" + owner + "/" + repo + "/releases/latest/download/mc_hammer-0.1.0.jar";
+  var releasesPage = "https://github.com/" + owner + "/" + repo + "/releases";
 
   var latestBtn = document.getElementById("downloadLatest");
   var releasesBtn = document.getElementById("releasesPage");
   var repoLabel = document.getElementById("repoLabel");
 
   if (latestBtn) {
-    latestBtn.href = directJar;
+    latestBtn.href = releasesPage;
   }
 
   if (releasesBtn) {
-    releasesBtn.href = latestRelease;
+    releasesBtn.href = releasesPage;
   }
 
   if (repoLabel) {
