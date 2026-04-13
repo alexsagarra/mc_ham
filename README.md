@@ -1,142 +1,101 @@
-# MC Hammer Mod (Minecraft Fabric 1.21.11)
+# MC Ham (Minecraft Fabric Mod)
 
-Lernprojekt fuer den Einstieg ins Minecraft Modding.
+<p align="center">
+  <img src="docs/logo.png" alt="MC Ham Logo" width="220" />
+</p>
 
-Ziel ist ein neues Werkzeug **Hammer**, das sehr stark ist, viele Blockarten effizient abbauen kann und mit einer angepassten Rezeptlogik gecraftet wird.
+MC Ham ist ein Fabric-Mod fuer Minecraft 1.21.11 und fuegt mehrere starke Hammer als Multi-Tool hinzu.
 
-Mod Name (offiziell): Minecraft Hammer
-Mod Name kurz: "MC Ham"
-Ingame Item: “Hammer”
-Discord / Bot später: !ham oder !hammer
+- Projektseite: https://alexsagarra.github.io/mc_ham/
+- Repository: https://github.com/alexsagarra/mc_ham
+- Mod ID: mc_hammer
 
-## Vision
+## Features
 
-Der Hammer soll:
-- wie ein vielseitiges Multi-Tool nutzbar sein (Stein, Erde, Sand, Kies und weitere geeignete Blockgruppen)
-- als Basisrezept eine Schaufel-Form nutzen (2 Stoecke)
-- als Kopfmaterial **Bloecke** verwenden (z. B. Eisenblock, Kupferblock, Diamantblock), nicht klassische Ingot-Rezepte
-- sehr hohe Haltbarkeit und starke Abbaugeschwindigkeit besitzen
+- Multi-Tool Mining (Pickaxe, Axe, Shovel, Sword-Mineables)
+- 3er-Abbau: Zentrum + links + rechts
+- Verzauberbar wie normale Tools
+- Mehrere Hammer-Typen: Kupfer, Eisen, Gold, Diamant, Obsidian
+- Obsidian-Hammer mit Spezialeffekt:
+  - Blitz auf Trefferposition
+  - zusaetzliche Zerstoerung von 2 bis 5 Bloecken in der Umgebung
 
-## Projektstatus
+## Kompatibilitaet
 
-- Status: Initiale Dokumentationsphase abgeschlossen
-- Naechster Schritt: Fabric-Projektgeruest erzeugen und Hammer V1 implementieren
+- Minecraft: 1.21.11
+- Loader: Fabric
+- Java: 21+
+- Empfohlen: Fabric API
 
-## Architektur
+## Installation (Client)
 
-### Zielarchitektur (Code)
+1. Fabric Loader fuer 1.21.11 installieren.
+2. Mod-JAR herunterladen (Release-Seite).
+3. JAR in den Mods-Ordner kopieren:
 
-- `McHammerMod`:
-	- Mod-Einstiegspunkt
-	- startet Registrierung aller Inhalte
-- `HammerItems`:
-	- zentrale Registrierung der Hammer-Items
-- `HammerItem`:
-	- Verhalten des Hammers (Effizienz, Haltbarkeitsverbrauch, ggf. Speziallogik)
-- `HammerToolTiers`:
-	- Materialwerte je Hammer-Tier (Durability, Speed, Mining-Level)
+```text
+%APPDATA%/.minecraft/mods
+```
 
-### Zielarchitektur (Resources)
+4. Minecraft mit Fabric-Profil starten.
 
-- `fabric.mod.json`: Mod-Metadaten und Entrypoints
-- `assets/<modid>/lang/de_de.json`: sichtbare Namen und Texte
-- `assets/<modid>/models/item/*.json`: Item-Modelle
-- `assets/<modid>/textures/item/*.png`: Item-Texturen
-- `data/<modid>/recipes/*.json`: Crafting-Rezepte
-- `data/<modid>/tags/blocks/*.json`: Blockgruppen fuer Mining-Effektivitaet
+## Installation (Server / Aternos)
 
-### Designentscheidungen
+1. Server stoppen.
+2. Software auf Fabric setzen.
+3. Mod und Fabric API installieren.
+4. Server starten.
+5. Wichtig: Client und Server muessen dieselbe Mod-Version nutzen.
 
-- erst eine stabile V1 mit genau einem Hammer
-- dann Erweiterung auf mehrere Metallblock-Varianten
-- Effizienz ueber Block-Tags statt harter Einzelblocklisten
-- kurze Build/Test-Zyklen nach jeder Aenderung
+## Download
 
-## Build
+- Releases: https://github.com/alexsagarra/mc_ham/releases
+- Projektseite mit Anleitung/Media: https://alexsagarra.github.io/mc_ham/
 
-Sobald das Fabric-Projektgeruest steht:
+## Development
+
+### Build
 
 ```powershell
 ./gradlew build
 ```
 
-Erwartetes Ergebnis:
-- Build erfolgreich
-- Mod-JAR unter `build/libs/`
-
-## Run (Entwicklung)
-
-Lokaler Dev-Client:
+### Dev Client
 
 ```powershell
 ./gradlew runClient
 ```
 
-Optionaler Dev-Server:
+### Hilfsskripte (Windows)
 
 ```powershell
-./gradlew runServer
+./scripts/go.ps1 -Command build
+./scripts/go.ps1 -Command run
+./scripts/go.ps1 -Command build-copy
 ```
 
-## Deploy
+## Projektstruktur
 
-### Lokale Verteilung
-1. JAR aus `build/libs/` nutzen.
-2. In den Minecraft `mods`-Ordner (passende Version/Loader) kopieren.
-3. Spiel starten und Mod laden.
+- Einstiegspunkt: [src/main/java/de/mchammer/McHammerMod.java](src/main/java/de/mchammer/McHammerMod.java)
+- Item-Registrierung: [src/main/java/de/mchammer/item/HammerItems.java](src/main/java/de/mchammer/item/HammerItems.java)
+- Hammer-Logik: [src/main/java/de/mchammer/item/HammerItem.java](src/main/java/de/mchammer/item/HammerItem.java)
+- Obsidian-Speziallogik: [src/main/java/de/mchammer/item/ObsidianHammerItem.java](src/main/java/de/mchammer/item/ObsidianHammerItem.java)
+- Mod-Metadaten: [src/main/resources/fabric.mod.json](src/main/resources/fabric.mod.json)
 
-### Deploy per Skript (Windows, empfohlen)
+## Medien
 
-Skriptpfad:
+![MC Ham Screenshot 1](docs/MC_Hammer_Mod_1.png)
 
-- `scripts/publish-to-minecraft.ps1`
+![MC Ham Screenshot 2](docs/MC_Hammer_Mod_2.png)
 
-Nur kopieren (wenn bereits gebaut):
+- Demo-Video auf der Projektseite: https://alexsagarra.github.io/mc_ham/
 
-```powershell
-./scripts/publish-to-minecraft.ps1
-```
+## Roadmap (Kurz)
 
-Build + kopieren in einem Schritt:
+- v0.2.0: Balancing, QoL, Cooldowns
+- v0.3.0: Server-Konfigurationen und Distribution
+- v1.0.0: Stabiler Release mit langfristigem Support
 
-```powershell
-./scripts/publish-to-minecraft.ps1 -BuildFirst
-```
+## License
 
-Eigenen Minecraft-Ordner angeben (z. B. anderer Launcher):
-
-```powershell
-./scripts/publish-to-minecraft.ps1 -BuildFirst -MinecraftDir "D:\Games\Minecraft\.minecraft"
-```
-
-### Plattformen (optional spaeter)
-
-- Modrinth
-- CurseForge
-
-Empfehlung fuer spaeteren Upload:
-- saubere Versionierung (SemVer, z. B. `0.1.0`)
-- Changelog pro Release
-- klare Abhaengigkeiten (Fabric Loader, Fabric API, MC-Version)
-
-## Geplanter Fahrplan
-
-Der detaillierte Umsetzungsplan liegt in:
-
-- `PLAN.md`
-
-## Lernfokus
-
-Mit diesem Projekt lernst du die wichtigsten Modding-Bausteine:
-- Registry und Mod-Einstieg
-- Item-Verhalten und Balancing
-- Rezepte und Tags
-- Asset-Pipeline (Lang/Modell/Textur)
-- Build- und Test-Workflow
-
-## Nächste konkrete Umsetzungsschritte
-
-1. Fabric-Template fuer 1.21.11 initialisieren.
-2. Grundstruktur aus PLAN.md anlegen.
-3. Ersten Hammer (Eisenblock-Hammer) implementieren.
-4. Build und Ingame-Test ausfuehren.
+Dieses Projekt steht unter der in [LICENSE](LICENSE) definierten Lizenz.
